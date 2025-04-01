@@ -33,7 +33,6 @@ body {
     padding: 0 20px;
 }
 
-/* Typography */
 h1, h2, h3, h4 {
     color: var(--dark-color);
     line-height: 1.2;
@@ -44,7 +43,6 @@ a {
     color: inherit;
 }
 
-/* Buttons */
 .btn-primary {
     display: inline-block;
     background-color: var(--secondary-color);
@@ -81,7 +79,6 @@ a {
     box-shadow: var(--shadow);
 }
 
-/* Header */
 header {
     background-color: var(--primary-color);
     padding: 20px 0;
@@ -130,7 +127,6 @@ nav a:hover:after {
     background-color: var(--secondary-color);
 }
 
-/* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     color: var(--white);
@@ -159,7 +155,6 @@ nav a:hover:after {
     opacity: 0.9;
 }
 
-/* Search Form */
 .search-form {
     display: flex;
     flex-wrap: wrap;
@@ -198,7 +193,6 @@ nav a:hover:after {
     box-shadow: 0 0 0 3px rgba(255, 111, 0, 0.2);
 }
 
-/* Section Styling */
 .section {
     padding: 80px 0;
 }
@@ -220,7 +214,6 @@ nav a:hover:after {
     margin-right: auto;
 }
 
-/* Grid System */
 .grid {
     display: grid;
     gap: 30px;
@@ -234,7 +227,6 @@ nav a:hover:after {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-/* Cards */
 .card {
     background: var(--white);
     border-radius: 10px;
@@ -278,7 +270,6 @@ nav a:hover:after {
     color: var(--text-color);
 }
 
-/* Service Cards */
 .service-card {
     text-align: center;
     padding: 40px 25px;
@@ -314,7 +305,6 @@ nav a:hover:after {
     font-size: 1.4rem;
 }
 
-/* Contact Form */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -325,7 +315,6 @@ nav a:hover:after {
     resize: vertical;
 }
 
-/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -346,7 +335,6 @@ footer a:hover {
     color: var(--accent-color);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -386,5 +374,138 @@ footer a:hover {
 
     .btn-primary, .btn-secondary {
         width: 100%;
+    }
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.about-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text h3 {
+    color: var(--primary-color);
+    margin: 25px 0 15px;
+    font-size: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.features-list {
+    margin: 30px 0;
+    padding-left: 20px;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.features-list li:before {
+    content: '✓';
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 60px 0;
+    padding: 40px 0;
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+}
+
+.stat-item {
+    padding: 0 20px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.team-card {
+    text-align: center;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px;
+    border: 5px solid var(--light-color);
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.position {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats {
+        flex-direction: column;
+    }
+    
+    .stat-item {
+        margin-bottom: 30px;
+    }
+    
+    .stat-item:last-child {
+        margin-bottom: 0;
     }
 }
