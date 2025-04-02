@@ -57,5 +57,26 @@
             <p><a href="contact.html">Contact Us</a></p>
         </div>
     </footer>
+    
+    <script>
+      (function (w, d, s, o, f, js, fjs) {
+        w["botsonic_widget"] = o;
+        w[o] =
+          w[o] ||
+          function () {
+            (w[o].q = w[o].q || []).push(arguments);
+          };
+        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+        js.id = o;
+        js.src = f;
+        js.async = 1;
+        fjs.parentNode.insertBefore(js, fjs);
+      })(window, document, "script", "Botsonic", "https://widget.botsonic.com/CDN/botsonic.min.js");
+      Botsonic("init", {
+        serviceBaseUrl: "https://api-azure.botsonic.ai",
+        token: "9379cb86-52e6-4092-a271-8dd7af616a80",
+      });
+    </script>
+    
 </body>
 </html>
