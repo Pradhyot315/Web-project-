@@ -675,3 +675,9 @@ footer a:hover {
     color: var(--secondary-color);
     margin-bottom: 15px;
 }
+
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
