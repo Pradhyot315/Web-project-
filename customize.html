@@ -207,21 +207,21 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Step navigation
+            
             const steps = document.querySelectorAll('.step');
             const stepContents = document.querySelectorAll('.step-content');
             const nextButtons = document.querySelectorAll('.next-step');
             const prevButtons = document.querySelectorAll('.prev-step');
             const tripOptions = document.querySelectorAll('.trip-option');
             
-            // Store selections
+            
             let tripSelections = {
                 destination: null,
                 accommodation: null,
                 activities: []
             };
             
-            // Prices
+            
             const prices = {
                 paris: 96000,
                 london: 120000,
@@ -234,21 +234,21 @@
                 adventure: 16000,
             };
             
-            // Handle option selection
+            
             tripOptions.forEach(option => {
                 option.addEventListener('click', function() {
                     const stepId = this.closest('.step-content').id;
                     const value = this.getAttribute('data-value');
                     
-                    // Remove selected class from siblings
+                    
                     this.parentNode.querySelectorAll('.trip-option').forEach(opt => {
                         opt.classList.remove('selected');
                     });
                     
-                    // Add selected class to clicked option
+                    
                     this.classList.add('selected');
                     
-                    // Store selection
+                    
                     if (stepId === 'step-1') {
                         tripSelections.destination = value;
                     } else if (stepId === 'step-2') {
@@ -263,14 +263,14 @@
                         }
                     }
                     
-                    // Update summary if on last step
+                    
                     if (document.getElementById('step-4').classList.contains('active')) {
                         updateSummary();
                     }
                 });
             });
             
-            // Next button click
+            
             nextButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const currentStep = this.closest('.step-content');
@@ -278,7 +278,7 @@
                     const nextStep = document.getElementById(nextStepId);
                     
                     if (nextStep) {
-                        // Update step indicators
+                        
                         const currentStepNumber = parseInt(currentStep.id.split('-')[1]);
                         steps.forEach(step => {
                             if (parseInt(step.getAttribute('data-step')) === currentStepNumber) {
@@ -289,11 +289,11 @@
                             }
                         });
                         
-                        // Switch content
+                        
                         currentStep.classList.remove('active');
                         nextStep.classList.add('active');
                         
-                        // Update summary if going to last step
+                       
                         if (nextStepId === 'step-4') {
                             updateSummary();
                         }
@@ -301,7 +301,7 @@
                 });
             });
             
-            // Previous button click
+            
             prevButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const currentStep = this.closest('.step-content');
@@ -309,7 +309,7 @@
                     const prevStep = document.getElementById(prevStepId);
                     
                     if (prevStep) {
-                        // Update step indicators
+                       
                         const currentStepNumber = parseInt(currentStep.id.split('-')[1]);
                         steps.forEach(step => {
                             if (parseInt(step.getAttribute('data-step')) === currentStepNumber) {
@@ -320,21 +320,21 @@
                             }
                         });
                         
-                        // Switch content
+                       
                         currentStep.classList.remove('active');
                         prevStep.classList.add('active');
                     }
                 });
             });
             
-            // Complete booking
+            
             document.getElementById('complete-booking').addEventListener('click', function() {
                 alert('Thank you for your booking! Our travel specialist will contact you shortly to finalize your dream trip.');
             });
             
-            // Update summary
+            
             function updateSummary() {
-                // Destination
+                
                 if (tripSelections.destination) {
                     const destName = {
                         paris: 'Paris, France',
@@ -344,7 +344,7 @@
                     document.getElementById('summary-destination').textContent = destName;
                 }
                 
-                // Accommodation
+                
                 if (tripSelections.accommodation) {
                     const accName = {
                         luxury: 'Luxury Hotel',
@@ -354,7 +354,7 @@
                     document.getElementById('summary-accommodation').textContent = accName;
                 }
                 
-                // Activities
+                
                 if (tripSelections.activities.length > 0) {
                     const activityNames = tripSelections.activities.map(a => {
                         return {
@@ -366,7 +366,7 @@
                     document.getElementById('summary-activities').textContent = activityNames;
                 }
                 
-                // Calculate total
+               
                 let total = 0;
                 if (tripSelections.destination) total += prices[tripSelections.destination];
                 if (tripSelections.accommodation) total += prices[tripSelections.accommodation];
